@@ -1,2 +1,12 @@
 ---
 # tasks file for ansible-role-adduser
+- name: Adding user
+  user:
+    name: "{{ username }}"
+    createhome: true
+    group: "{{ username }}"
+    password: "{{ username }}"
+    shell: /bin/bash
+    uid: 1000
+    state: present
+  become: true

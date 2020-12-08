@@ -5,6 +5,7 @@
     gid: "{{ uid_guid }}"
     name: "{{ username }}"
     state: present
+  become: true
 
 - name: Adding user
   user:

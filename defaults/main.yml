@@ -1,3 +1,4 @@
 ---
 # defaults file for ansible-role-adduser
 username: sandi
+uid_guid: 1000

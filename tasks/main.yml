@@ -1,5 +1,11 @@
 ---
 # tasks file for ansible-role-adduser
+- name: Add group "{{ username }}"
+  group:
+    gid: "{{ uid_guid }}"
+    name: "{{ username }}"
+    state: present
+
 - name: Adding user
   user:
     name: "{{ username }}"
@@ -7,6 +13,6 @@
     group: "{{ username }}"
     password: "{{ username }}"
     shell: /bin/bash
-    uid: 1000
+    uid: "{{ uid_guid }}"
     state: present
   become: true

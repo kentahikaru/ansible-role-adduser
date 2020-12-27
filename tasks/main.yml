@@ -10,7 +10,7 @@
 - name: Adding user
   user:
     name: "{{ as_user }}"
-    password: "{{ password | password_hash('sha512') }}"
+    password: "{{ 'password' | password_hash('sha512') }}"
     createhome: true
     group: "{{ as_user }}"
     password: "{{ as_user }}"

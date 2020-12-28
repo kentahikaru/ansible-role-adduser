@@ -1,4 +1,5 @@
 ---
 # defaults file for ansible-role-adduser
 as_user: defaultuser
+as_user_password: defaultuser
 uid_guid: 1000

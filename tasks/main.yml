@@ -13,7 +13,7 @@
     password: "{{ as_user_password | password_hash('sha512') }}"
     createhome: true
     group: "{{ as_user }}"
-    password: "{{ as_user }}"
+    # password: "{{ as_user }}"
     shell: /bin/bash
     uid: "{{ uid_guid }}"
     state: present

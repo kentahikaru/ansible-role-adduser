@@ -20,7 +20,7 @@
   become: true
 
 - name: Add user to sudoers file
-  when: as_user_add_to_sudoers == true
+  when: as_user_add_to_sudoers
   lineinfile:
     path: /etc/sudoers
     regexp: '^{{ as_user }}'

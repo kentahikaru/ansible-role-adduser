@@ -23,6 +23,6 @@
   when: as_user_add_to_sudoers == true
   lineinfile:
     path: /etc/sudoers
-    regexp: '^as_user'
-    line: 'as_user ALL=(ALL) ALL'
+    regexp: '^{{ as_user }}'
+    line: '{{ as_user }} ALL=(ALL) ALL'
     validate: 'visudo -cf %s'

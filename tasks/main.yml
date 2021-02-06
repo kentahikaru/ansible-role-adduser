@@ -27,3 +27,4 @@
     line: '{{ as_user }} ALL=(ALL) ALL'
     insertafter: '^root'
     validate: 'visudo -cf %s'
+  become: true

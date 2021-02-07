@@ -3,4 +3,5 @@
 as_user: defaultuser
 as_user_password: defaultuser
 as_user_add_to_sudoers: false
+as_user_add_to_sudoers_no_password: false
 uid_guid: 1000

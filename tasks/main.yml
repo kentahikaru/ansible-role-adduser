@@ -20,11 +20,21 @@
   become: true
 
 - name: Add user to sudoers file
-  when: as_user_add_to_sudoers
+  when: as_user_add_to_sudoers and not as_user_add_to_sudoers_no_password
   lineinfile:
     path: /etc/sudoers
     regexp: '{{ as_user }}'
     line: '{{ as_user }} ALL=(ALL) ALL'
+    insertafter: '^root'
+    validate: 'visudo -cf %s'
+  become: true
+
+- name: Add user to sudoers file
+  when: as_user_add_to_sudoers and as_user_add_to_sudoers_no_password
+  lineinfile:
+    path: /etc/sudoers
+    regexp: '{{ as_user }}'
+    line: '{{ as_user }} ALL=(ALL) NOPASSWD:ALL'
     insertafter: '^root'
     validate: 'visudo -cf %s'
   become: true

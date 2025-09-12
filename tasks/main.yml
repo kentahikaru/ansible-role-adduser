@@ -24,7 +24,7 @@
   ansible.builtin.lineinfile:
     path: /etc/sudoers
     regexp: '{{ as_user }}'
-    line: '{{ as_user }} ALL=(ALL) ALL'
+    line: '{{ as_user }} ALL=(ALL:ALL) ALL'
     insertafter: '^root'
     validate: 'visudo -cf %s'
   become: true
@@ -34,7 +34,7 @@
   ansible.builtin.lineinfile:
     path: /etc/sudoers
     regexp: '{{ as_user }}'
-    line: '{{ as_user }} ALL=(ALL) NOPASSWD:ALL'
+    line: '{{ as_user }} ALL=(ALL:ALL) NOPASSWD:ALL'
     insertafter: '^root'
     validate: 'visudo -cf %s'
   become: true

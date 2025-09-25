@@ -12,6 +12,7 @@
     name: "{{ as_user }}"
     password: "{{ as_user_password | password_hash('sha512') }}"
     createhome: true
+    system: {{ as_user_system_account }}
     group: "{{ as_user }}"
     # password: "{{ as_user }}"
     shell: /bin/bash
